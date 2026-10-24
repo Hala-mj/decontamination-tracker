@@ -54,16 +54,22 @@ decontamination-tracker/
 ├── process.html           # 8-stage decontamination workflow
 ├── scripts.js             # all page logic + localStorage
 ├── styles.css
-└── docs/screenshots/
+└── docs/
+    ├── Summer_Training_Report.pdf
+    └── screenshots/
 ```
 
 ## Notes
 
 This is a front-end prototype. The patch list in the sidebar is static, reports are not implemented yet, and data lives only in the current browser.
 
+## Documentation
+
+Summer training report (student ID removed): [`docs/Summer_Training_Report.pdf`](docs/Summer_Training_Report.pdf).
+
 ## Credits
 
-Built by **Hala Jalal** during the Computer Science summer training (Umm Al-Qura University) at Medical Fakeeh, 2024.
+Developed during the Computer Science summer training (Umm Al-Qura University) at Medical Fakeeh, 2024, as part of teamwork with other trainees. **Hala Jalal** contributed as a team member.
 
 ## License
 
