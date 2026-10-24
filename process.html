@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Process</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+        <nav class="sidebar">
+    <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="add-equipment.html">Add new equipment</a></li>
+            <li><a href="decontamination.html">Start decontamination</a></li>
+            <li><a href="#" onclick="extractReports(); return false;">Extract reports</a></li>
+            <li class="submenu">
+                <a href="#">Patch</a>
+                <ul>
+                <li><a href="#">Patch 000001</a></li>
+                <li><a href="#">Patch 000002</a></li>
+                <li><a href="#">Patch 000003</a></li>
+                <li><a href="#">Patch 000004</a></li>
+                <li><a href="#">Patch 000005</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+<div class="main-content">
+        <div id="processPage" class="page active">
+            <div class="process-header">
+                <span>Patch no: <span id="patchNumber">#000000</span></span>
+                <span>State: <span id="processState">Zone 1 in process</span></span>
+            </div>
+            <div class="process-container">
+                <div class="process-box" id="process1" onclick="openProcessModal('Rinsing', 1)">Rinsing</div>
+                <div class="process-box disabled" id="process2" onclick="openProcessModal('OPA strap test', 2)">OPA strap test</div>
+                <div class="process-box disabled" id="process3" onclick="openProcessModal('Ultrasonic test', 3)">Ultrasonic test</div>
+                <div class="process-box disabled" id="process4" onclick="openProcessModal('Drying', 4)">Drying</div>
+                <div class="process-box disabled" id="process5" onclick="openProcessModal('Bomical dich test', 5)">Bomical dich test</div>
+                <div class="process-box disabled" id="process6" onclick="openProcessModal('Bomical dich test', 6)">Bomical dich test</div>
+                <div class="process-box disabled" id="process7" onclick="openProcessModal('Bomical dich test', 7)">Bomical dich test</div>
+                <div class="process-box disabled" id="process8" onclick="openProcessModal('IP test', 8)">IP test</div>
+            </div>
+            <button onclick="completeCurrentProcess()" class="disabled" id="nextButton">Next</button>
+        </div>
+
+        <div id="processModal" class="modal">
+            <div class="modal-content">
+                <h2 id="processModalTitle">Process</h2>
+                <label for="processInput">Enter details:</label>
+                <input type="text" id="processInput">
+                <div class="modal-buttons">
+                    <button onclick="completeCurrentProcess()">Complete</button>
+                    <button onclick="closeProcessModal()">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Function to get URL parameter
+        function getURLParameter(name) {
+            return new URLSearchParams(window.location.search).get(name);
+        }
+
+        // Set the patch number from URL parameter
+        window.onload = function() {
+            var patchNumber = getURLParameter('patchNumber');
+            if (patchNumber) {
+                document.getElementById('patchNumber').innerText = '#' + patchNumber;
+            }
+        }
+    </script>
+    <script src="scripts.js"></script>
+</body>
+</html>
